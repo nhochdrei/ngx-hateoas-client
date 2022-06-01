@@ -80,7 +80,7 @@ export class Resource extends BaseResource {
     const relationLink = this.getRelationLink(relationName);
     let body;
     if (isArray(entities)) {
-      body = entities
+      body = (<Array<T>>entities)
         .map(entity => {
           return ResourceUtils.initResource(entity).getSelfLinkHref();
         })

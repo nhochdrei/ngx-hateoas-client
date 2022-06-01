@@ -28,6 +28,7 @@ export abstract class BaseResource extends AbstractResource {
   public getRelation<T extends BaseResource>(relationName: string,
                                              options?: GetOption
   ): Observable<T> {
+    console.log('getRelation', relationName, options)
     ValidationUtils.validateInputParams({relationName});
     StageLogger.resourceBeginLog(this, 'GET_RELATION', {relationName, options});
 

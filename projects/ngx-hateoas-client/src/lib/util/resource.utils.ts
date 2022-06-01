@@ -76,7 +76,7 @@ export class ResourceUtils {
     if (isNil(payload)) {
       return payload;
     } else if (isArray(payload)) {
-      for (let i = 0; i < payload.length; i++) {
+      for (let i = 0; i < (<any>payload).length; i++) {
         payload[i] = this.resolvePayloadType(key, payload[i], isProjection);
       }
     } else if (isProjection && isPlainObject(payload)) {

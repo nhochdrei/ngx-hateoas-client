@@ -20,7 +20,7 @@ export class StageLogger {
     if (isString(resource)) {
       resourceName = resource;
     } else if (!isNil(resource)) {
-      resourceName = '__resourceName__' in resource ? resource['__resourceName__'] : 'EmbeddedResource';
+      resourceName = '__resourceName__' in <object>resource ? resource['__resourceName__'] : 'EmbeddedResource';
     } else {
       resourceName = 'NOT_DEFINED_RESOURCE_NAME';
     }
@@ -38,7 +38,7 @@ export class StageLogger {
     if (isString(resource)) {
       resourceName = resource;
     } else {
-      resourceName = '__resourceName__' in resource ? resource['__resourceName__'] : 'EmbeddedResource';
+      resourceName = '__resourceName__' in <object>resource ? resource['__resourceName__'] : 'EmbeddedResource';
     }
 
     ConsoleLogger.resourcePrettyInfo(`${ capitalize(resourceName) } ${ method }`,
